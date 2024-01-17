@@ -13,6 +13,12 @@ document.querySelectorAll(".item").forEach((item) => {
     item.addEventListener("mouseover", (e) => {
         const pos = item.getAttribute("data-pos");
 
+        document.querySelectorAll(".item").forEach((it) => {
+            if (it.classList.contains("item-full")) {
+                it.classList.remove("item-full");
+            }
+        })
+
         for (let i = 0; i <= pos; i++) {
             const square = document.querySelector(`.item-${i}`);
             if (!square.classList.contains("item-full")) {
